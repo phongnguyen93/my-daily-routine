@@ -17,6 +17,7 @@ android:
     - platform-tools
     - android-19
     - android-22
+    - android-29
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-22
 
