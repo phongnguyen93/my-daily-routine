@@ -4,6 +4,9 @@ apply plugin: "kotlin-android"
 
 apply plugin: "kotlin-android-extensions"
 
+apply plugin: 'com.github.kt3k.coveralls'
+
+
 android {
     compileSdkVersion rootProject.compileSdkVersion
     defaultConfig {
@@ -18,6 +21,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+        debug {
+            testCoverageEnabled true
         }
     }
     compileOptions {
@@ -44,4 +50,13 @@ dependencies {
     // Instrumentation tests
     androidTestImplementation "androidx.test:runner:$rootProject.runnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+}
+
+coveralls {
+    jacocoReportPath = "${buildDir}/reports/coverage/debug/report.xml"
+}
+
+tasks.coveralls {
+    dependsOn 'connectedAndroidTest'
+    onlyIf { System.env.'CI' }
 }

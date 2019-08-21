@@ -22,6 +22,9 @@ buildscript {
         runnerVersion = "1.2.0"
         espressoVersion = "3.2.0"
         junitVersion = "4.12"
+
+        //Misc
+        coverallsVersion = "2.4.0"
     }
 
 
@@ -33,6 +36,7 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:${androidGradleBuildVersion}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.kt3k.gradle.plugin:coveralls-gradle-plugin:$coverallsVersion"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
