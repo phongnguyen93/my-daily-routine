@@ -2,7 +2,7 @@ language: android
 
 env:
   matrix:
-    - ANDROID_TARGET=android-29 ANDROID_ABI=armeabi-v7a
+    - ANDROID_TARGET=android-22 ANDROID_ABI=armeabi-v7a
 
 notifications:
   slack: videosocialnetwork:ber6OdxZTeh4aDV9DsDNMFBH
@@ -16,9 +16,9 @@ android:
     - build-tools-28.0.3
     - platform-tools
     - android-19
-    - android-29
+    - android-22
     - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-29
+    - sys-img-armeabi-v7a-android-22
 
 before_script:
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
